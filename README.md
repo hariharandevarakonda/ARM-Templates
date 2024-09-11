@@ -135,7 +135,7 @@ Many fitness enthusiasts face challenges in selecting the right workout programs
 
   - ![Services-page Screenshot](./ProjectScreenshots/Services-page.png)
 
-  **About Us Page after complete Deployment**
+  **Contact Us Page after complete Deployment**
 
   - ![GetInTouch Screenshot](./ProjectScreenshots/GetInTouch.png)
 

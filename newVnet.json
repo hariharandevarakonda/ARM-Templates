@@ -1,0 +1,88 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+      {
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2020-06-01",
+        "name": "[parameters('vnetName')]",
+        "location": "[resourceGroup().location]",
+        "properties": {
+          "addressSpace": {
+            "addressPrefixes": ["10.0.0.0/16"]
+          },
+          "subnets": [
+            {
+              "name": "[parameters('subnetName')]",
+              "properties": {
+                "addressPrefix": "10.0.1.0/24",
+                "networkSecurityGroup": {
+                  "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.Network/networkSecurityGroups",
+        "apiVersion": "2020-06-01",
+        "name": "[parameters('nsgName')]",
+        "location": "[resourceGroup().location]",
+        "properties": {
+          "securityRules": [
+            {
+              "name": "Allow-HTTP",
+              "properties": {
+                "priority": 100,
+                "access": "Allow",
+                "direction": "Inbound",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "*",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*"
+              }
+            },
+            {
+              "name": "Allow-SSH",
+              "properties": {
+                "priority": 101,
+                "access": "Allow",
+                "direction": "Inbound",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "22",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*"
+              }
+            }
+          ]
+        }
+      }
+      
+    ],
+    "parameters": {
+      "vnetName": {
+        "type": "string",
+        "defaultValue": "myVnet",
+        "metadata": {
+          "description": "The name of the virtual network"
+        }
+      },
+      "subnetName": {
+        "type": "string",
+        "defaultValue": "mySubnet",
+        "metadata": {
+          "description": "The name of the subnet"
+        }
+      },
+      "nsgName": {
+        "type": "string",
+        "defaultValue": "myNetworkSecurityGroup",
+        "metadata": {
+          "description": "The name of the network security group"
+        }
+      }
+    }
+  }

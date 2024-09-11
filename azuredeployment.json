@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountTire": {
+            "type": "string",
+            "metadata": {
+                "description": "Tire of storage account"
+            },
+            "defaultValue": "Standard",
+            "allowedValues": [
+                "Standard",
+                "Premium"
+            ]
+        }
+    },
+    "functions": [],
+    "variables": {
+        "resourceName": "hmstorage"
+    },
+    "resources": [
+        {
+            "name": "[variables('resourceName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2023-04-01",
+            "tags": {
+                "displayName": "hmstorage"
+            },
+            "location": "[resourceGroup().location]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "[parameters('storageAccountTire')]"
+            }
+        }
+    ],
+    "outputs": {}
+}

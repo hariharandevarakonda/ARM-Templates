@@ -90,7 +90,7 @@ Many fitness enthusiasts face challenges in selecting the right workout programs
 ## Live Website and Resources
 
 - **Website Link**: [HMGYM](https://github.com/hariharandevarakonda/HMGYM.git)
-- **Demo Video**: [Project-Recording](<./ProjectScreenshots/Deploying%20a%20static%20website%20using%20Azure%20Load%20Balancer%20by%20ARM%20template.%20(1).mp4>)
+- **Demo Video**: [Project-Recording](https://youtu.be/Qh7xYo1rYXY)
 - **Screenshots**:
   **Created Resource Group Screenshot**
 
@@ -143,4 +143,4 @@ Many fitness enthusiasts face challenges in selecting the right workout programs
 ## Conclusion
 
 This project showcases the end-to-end process of deploying a static website using Azure's ARM templates and load balancing capabilities. By distributing traffic between two VMs in different availability zones, we ensure high availability and scalability for the **HMGYM** platform. The integration of Azure's powerful tools and services simplified the deployment and configuration process.
-"# ARM-Templates" 
+"# ARM-Templates"

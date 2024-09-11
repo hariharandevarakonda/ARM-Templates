@@ -31,8 +31,7 @@ Many fitness enthusiasts face challenges in selecting the right workout programs
 
 ### 1. Website Development
 
-- **HMGYM**: A static website allowing users to upload images of clothing items, generating a variety of outfit combinations.
-
+- **HMGYM**: A static web application offers a comprehensive online platform for fitness enthusiasts to explore and select tailored workout programs, diet plans. Designed with user experience in mind, the site provides a streamlined interface for browsing personal training services, choosing specific workout routines.
 ### 2. Deploying the Website on GitHub
 
 - The frontend of **HMGYM** was uploaded to a public GitHub repository: [HMGYM](https://github.com/hariharandevarakonda/HMGYM.git).

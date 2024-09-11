@@ -97,7 +97,7 @@ Many fitness enthusiasts face challenges in selecting the right workout programs
 
   **ResourceGroup Deployment Command Output**
 
-  - ![RSG-Deployment-output Screenshot](./ProjectScreenshots/RSG-Deployment-output.png)
+  - ![RSG-Deployment-output Screenshot](./ProjectScreenshots/RSG-Deployment-Output.png)
 
   **VNet Subnets RSG ARM Template Output**
 
